@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es-MX" >
+<head>
+  <meta charset="UTF-8">
+  <title>2023</title>
+   <script src="./jquery-3-5-0.js"></script>
+</head>
+<body>
+<style>
+  
+  .yesterday { box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19); background-color: rgb(0, 0, 0); height: 45px; width: 100%; z-index: 0;  position: relative; border-radius: 15px 15px 0px 0px }
+  .yesterday:hover { box-shadow: 0 4px 10px 0 rgba(5, 1, 39, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19);
+     background-color: rgb(3, 6, 53);  height: 45px; width: 100%; z-index: 0;  position: relative; border-radius: 15px 15px 0px 0px }
+  .today {background: rgb(2, 46, 71); height: 55px; width: 100%;  z-index: 0; position: relative;}
+  .today:hover {background: rgb(2, 53, 102); height: 55px; width: 100%;  z-index: 0; position: relative;}
+  .tomorrow { box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19); border-radius: 0px 0px 15px 15px; 
+    background: rgb(0, 0, 0); height: 56px; width: 100%;z-index: 0; position: relative; }
+  .tomorrow:hover { box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19); 
+    border-radius: 0px 0px 15px 15px; 
+    background: rgb(3, 6, 53); height: 56px; width: 100%;z-index: 0; position: relative; }
+  p, .w3-bar-block.w3-center .w3-bar-item {text-align: center}
+p, .w3-center {text-align: center!important}
+p, .w3-center .w3-bar {display: inline-block;width: auto}
+
+.w3-auto{margin-left:auto;margin-right:auto}
+.w3-auto{max-width:940px}
+@media (max-width:1205px){.w3-auto{max-width:95%}}
+@media (max-width:600px){.w3-auto{max-width:100%}}
+.w3-container {padding:0.01em 16px}
+.w3-container:after,.w3-container:before{content:"";display:table;clear:both}
+/*.year365 {box-sizing:border-box}*/
+.year365, *,*:before,*:after{box-sizing:inherit}
+.year365 {-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
+.year365 {margin:0}
+
+</style>
+
+<div class="year365">
+<div class="w3-container">
+<div class="yesterday"></div>
+<div class="today"></div>
+<div class="tomorrow "></div>
+</div>
+
+<div style="z-index: 2; top:10px; position: absolute; text-align: center; font-weight: 300;
+color: white; margin-left: 40px" class="">
+  <div id="day264"><p><b>DÍA 264</b> - jueves, 21 de septiembre de 2023</p></div>
+  <div id="day265"><p><b>DÍA 265</b> - viernes, 22 de septiembre de 2023</p></div>
+  <div id="day266"><p><b>DÍA 266</b> - sábado, 23 de septiembre de 2023</p></div>
+  <div id="day267"><p><b>DÍA 267</b> - domingo, 24 de septiembre de 2023</p></div>
+  <div id="day268"><p><b>DÍA 268</b> - lunes, 25 de septiembre de 2023</p></div>
+  <div id="day269"><p><b>DÍA 269</b> - martes, 26 de septiembre de 2023</p></div>
+  <div id="day270"><p><b>DÍA 270</b> - miércoles, 27 de septiembre de 2023</p></div>
+  <div id="day271"><p><b>DÍA 271</b> - jueves, 28 de septiembre de 2023</p></div>
+  <div id="day272"><p><b>DÍA 272</b> - viernes, 29 de septiembre de 2023</p></div>
+</div>
+</div>
+<script src="./2023.js"></script>
+</body>
+</html>

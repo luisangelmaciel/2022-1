@@ -1,4 +1,4 @@
-var tnum = 'en';
+var tnum = 'es';
 
 $(document).ready(function(){
   
@@ -44,6 +44,7 @@ function translate(tnum){
   $('h1').text(trans[0][tnum]);
   $('p').text(trans[1][tnum]);
   $('.content a span').text(trans[2][tnum]);
+  $('h2').text(trans[3][tnum]);
 }
 
 var trans = [ 
@@ -71,6 +72,14 @@ var trans = [
     de : 'Weitere Infos',
     cn : '查看更多',
     ar : 'مشاهدة المزيد'
-  },
+  },{ 
+    en : 'Services',
+    pt : 'Servicios Saiba mais',
+    es : 'Servicios',
+    fr : 'Servicios En savoir plus',
+    de : 'Servicios Weitere Infos',
+    cn : 'Servicios 查看更多',
+    ar : 'Servicios مشاهدة المزيد'
+  }
   
 ];

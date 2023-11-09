@@ -2,7 +2,9 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - tootle and list DRY switch hover card [ Speedy CSS Tips! ⚡️]</title>
+  <title>Tootle and list DRY switch hover card [ Speedy CSS Tips! ⚡️]</title>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale = 1.0, user-scalable = no">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel="stylesheet" href="./style.css">
 
@@ -24,7 +26,7 @@
   <figure class="figureBox"><img src="https://assets.codepen.io/605876/person.png" alt="" class="imgFigureBox"></figure>
 </article>
 
-
+<script src="./jquery-3-5-0.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
@@ -187,31 +189,27 @@ $(document).ready(function(){
     <section class="content-section">
       <!-- <h1 class="section-header">Accesos rápidos</h1> -->
       <div class="access-links">
-        <div class="access-link-wrapper  articlehover " >
-          <div class=" w3-card-2">          
-  <figure class="figureBox"><img src="https://assets.codepen.io/605876/person.png" alt="" class="  "></figure>
+       
+      
 
-           
+        <div class="access-link-wrapper">
+          <div class="access-icon w3-card-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-music">
+              <path d="M9 18V5l12-2v13"/>
+              <circle cx="6" cy="18" r="3"/>                   <circle cx="18" cy="16" r="3"/>
+            </svg>
           </div>
-          <span class="access-text">Images</span>
-        </div>
-        <div class="access-link-wrapper  articlehover " >
-          <div class=" w3-card-2">          
-  <figure class="figureBox"><img src="https://assets.codepen.io/605876/person.png" alt="" class="  "></figure>
-
-           
-          </div>
-          <span class="access-text">Images</span>
-        </div>
-       <div class="access-link-wrapper  articlehover " >
-          <div class=" w3-card-2">          
-  <figure class="figureBox"><img src="https://assets.codepen.io/605876/person.png" alt="" class="  "></figure>
-
-           
-          </div>
-          <span class="access-text">Images</span>
+          <span class="access-text">Music</span>
         </div>
         <div class="access-link-wrapper">
+          <div class="access-icon w3-card-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-music">
+              <path d="M9 18V5l12-2v13"/>
+              <circle cx="6" cy="18" r="3"/>                   <circle cx="18" cy="16" r="3"/>
+            </svg>
+          </div>
+          <span class="access-text">Music</span>
+        </div><div class="access-link-wrapper">
           <div class="access-icon w3-card-2">
             <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-music">
               <path d="M9 18V5l12-2v13"/>

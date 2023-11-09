@@ -2,22 +2,103 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - imput searchable content Javascript Js</title>
-  <link rel="stylesheet" href="./style.css">
+  <title>Imput searchable content Javascript Js</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<style>
+
+@media (max-width:600px) {
+  .w3-modal-content {
+      margin: 0 10px;
+      width: auto!important
+  }
+ 
+
+  .w3-modal {
+      padding-top: 30px
+  }
+  .w3-dropdown-hover.w3-mobile .w3-dropdown-content,
+  .w3-dropdown-click.w3-mobile .w3-dropdown-content {
+      position: relative
+  }
+  .w3-hide-small {
+      display: none!important
+  }
+  .w3-mobile {
+      display: block;
+      width: 100%!important
+  }
+  .w3-bar-item.w3-mobile,
+  .w3-dropdown-hover.w3-mobile,
+  .w3-dropdown-click.w3-mobile {
+      text-align: center
+  }
+  .w3-dropdown-hover.w3-mobile,
+  .w3-dropdown-hover.w3-mobile .w3-btn,
+  .w3-dropdown-hover.w3-mobile .w3-button,
+  .w3-dropdown-click.w3-mobile,
+  .w3-dropdown-click.w3-mobile .w3-btn,
+  .w3-dropdown-click.w3-mobile .w3-button {
+      width: 100%
+  }
+}
+
+@media (max-width:768px) {
+  .w3-modal-content {
+      width: 500px
+  }
+  .w3-modal {
+      padding-top: 50px
+  }
+  input {
+    display:     inline-flexbox;
+  width: 90%;
+  outline: none;
+}
+}
+
+@media (min-width:993px) {
+ 
+
+.w3-modal-content {
+      width: 900px
+  }
+  .w3-hide-large {
+      display: none!important
+  }
+  .w3-sidebar.w3-collapse {
+      display: block!important
+  }
+}
+
+@media (max-width:992px) and (min-width:601px) {
+  .w3-hide-medium {
+      display: none!important
+  }
+}
+input, .w3-auto{margin-left:auto;margin-right:auto}
+input, .w3-auto{max-width:940px}
+@media (max-width:1205px){input, .w3-auto{max-width:95%}}
+@media (max-width:600px){input, .w3-auto{max-width:100%}}
+</style>
 
 </head>
 <body>
 <!-- partial:index.partial.html -->
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="./w3.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<div class="searchable">
-  <div class="w3-top w3-margin w3-center w3-centered w3-white">  
-    <input type="text" autofocus        
-         placeholder=" 🔍 Buscar Sagas de Dragon Ball Super..."/>
+<div class="searchable w3-container ">
+  <div class="w3-top w3-margin  w3-white w3-block">  
+    <input type="text"  style="outline: none; 
+    height: 45px; border-radius: 10px;"
+    placeholder="🔍 Buscar..."/>
+    <style>input {border: 1px; font-weight: bolder; font-size: 14px; 
+         background: #1cadf613;}</style>
+       
   </div><br><br>
   <!-- Loop through your blog posts -->
- <div class="w3-container w3-auto">
+ <div class=""><br><br>
   <div class="searchable-item" style="line-height:18px;">
     <p style="font-size:14px"><b>2015</b> <span style="color:grey">| 14 episodios</span></p>
     <h1 style="line-height:24px; font-size:26px"><b>Saga Batalla de los Dioses</b><br>

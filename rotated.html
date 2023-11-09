@@ -17,7 +17,7 @@
       margin: 0 auto;
       display: block;
       top: 50%;
-      width: 400px;
+      /*width: 400px;*/
       text-align: center;
     }
     .container-box .top {
@@ -126,6 +126,56 @@
       background-color: #00451a;
       -webkit-backface-visibility: hidden;
     }
+
+      /*small*/
+
+@media (max-width:600px) {
+  .container-box .content {
+      position: relative;
+      margin: 0 auto;
+      display: block;
+      top: 50%;
+      max-width:600px;
+      text-align: center;
+    }
+}
+@media only screen and (max-width:580px) {
+    #lamp {color:inherit}
+}
+/*large*/
+@media (min-width:993px) {
+    #lamp {color:inherit}
+    .container-box .content {
+      position: relative;
+      margin: 0 auto;
+      display: block;
+      top: 50%;
+      min-width:993px;
+      text-align: center;
+    }
+}
+@media only screen and (max-width: 840px) {
+    #lamp {color:inherit}
+}
+
+/*medium */
+@media (max-width:992px) and (min-width:601px) {
+    #lamp {color:inherit}
+    .container-box .content {
+      position: relative;
+      margin: 0 auto;
+      display: block;
+      top: 50%;
+      min-width:601px; max-width:992px; 
+      text-align: center;
+    }
+}
+@media only screen and (min-width: 581px) and (max-width: 840px) {
+    #lamp {color:inherit}
+}
+@media (min-width: 768px) { 
+    #lamp {color:inherit}
+}
   </style>
 </head>
 <body>

@@ -1,19 +1,478 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="es-MX" >
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - Menu Scroll Effects</title>
-  <link rel="stylesheet" href="./style.css">
+  <title>Menu Scroll Effects</title>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale = 1.0, user-scalable = no">
+  <style>
+    ul {
+	position: relative;
+
+  width:100%;
+ height: 650px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+  padding: 0;
+  margin: 0;
+}
+	ul li {
+    list-style: none;
+		position: relative;
+		padding: 18px;
+		background: #eee;
+		color: #252525;
+		font-size: 20px;
+		z-index: 2;
+	}
+	ul li:nth-child(odd) {
+		background: #fff;
+	}
+
+
+/**
+ * Flip styles
+ */
+.flip {
+	-webkit-perspective: 400px;
+	   -moz-perspective: 400px;
+	    -ms-perspective: 400px;
+	     -o-perspective: 400px;
+	        perspective: 400px;
+
+	-webkit-perspective-origin: 50% 50%;
+	   -moz-perspective-origin: 50% 50%;
+	    -ms-perspective-origin: 50% 50%;
+	     -o-perspective-origin: 50% 50%;
+	        perspective-origin: 50% 50%;
+}
+
+	.flip li {
+		-webkit-transition: all 600ms ease,
+							opacity 300ms ease;
+		   -moz-transition: all 600ms ease;
+		    -ms-transition: all 600ms ease,
+		    				opacity 300ms ease;
+		     -o-transition: all 600ms ease,
+		    				opacity 300ms ease;
+		        transition: all 600ms ease,
+		        			opacity 300ms ease;
+
+		-webkit-transform-origin: 0% 0%;
+		   -moz-transform-origin: 0% 0%;
+		    -ms-transform-origin: 0% 0%;
+		     -o-transform-origin: 0% 0%;
+		        transform-origin: 0% 0%;
+	}
+		.flip li.past {
+			opacity: 0;
+
+			-webkit-transform-origin: 0% 100%;
+			   -moz-transform-origin: 0% 100%;
+			    -ms-transform-origin: 0% 100%;
+			     -o-transform-origin: 0% 100%;
+			        transform-origin: 0% 100%;
+
+			-webkit-transform: rotateX( 80deg );
+			   -moz-transform: rotateX( 80deg );
+			    -ms-transform: rotateX( 80deg );
+			     -o-transform: rotateX( 80deg );
+			        transform: rotateX( 80deg );
+		}
+		.flip li.future {
+			opacity: 0;
+
+			-webkit-transform: rotateX( -80deg );
+			   -moz-transform: rotateX( -80deg );
+			    -ms-transform: rotateX( -80deg );
+			     -o-transform: rotateX( -80deg );
+			        transform: rotateX( -80deg );
+		}
+
+
+/**
+ * 
+ */
+ .skew {
+ 	-webkit-perspective: 600px;
+ 	   -moz-perspective: 600px;
+ 	    -ms-perspective: 600px;
+ 	     -o-perspective: 600px;
+ 	        perspective: 600px;
+
+ 	-webkit-perspective-origin: 0% 50%;
+ 	   -moz-perspective-origin: 0% 50%;
+ 	    -ms-perspective-origin: 0% 50%;
+ 	     -o-perspective-origin: 0% 50%;
+ 	        perspective-origin: 0% 50%;
+ }
+ 	.skew li {
+ 		-webkit-transition: all 600ms ease,
+ 							opacity 200ms ease;
+ 		   -moz-transition: all 600ms ease;
+ 		    -ms-transition: all 600ms ease;
+ 		     -o-transition: all 600ms ease;
+ 		        transition: all 600ms ease;
+
+ 		-webkit-transform-origin: 0% 0%;
+ 		   -moz-transform-origin: 0% 0%;
+ 		    -ms-transform-origin: 0% 0%;
+ 		     -o-transform-origin: 0% 0%;
+ 		        transform-origin: 0% 0%;
+ 	}
+ 		.skew li.past {
+ 			-webkit-transform: skew( 0deg, 30deg );
+ 			   -moz-transform: skew( 0deg, 30deg );
+ 			    -ms-transform: skew( 0deg, 30deg );
+ 			     -o-transform: skew( 0deg, 30deg );
+ 			        transform: skew( 0deg, 30deg );
+ 		}
+ 		.skew li.future {
+ 			z-index: 0;
+
+ 			-webkit-transform: skew( 0deg, -30deg );
+ 			   -moz-transform: skew( 0deg, -30deg );
+ 			    -ms-transform: skew( 0deg, -30deg );
+ 			     -o-transform: skew( 0deg, -30deg );
+ 			        transform: skew( 0deg, -30deg );
+ 		}
+
+
+/**
+ * Wave styles
+ */
+.wave li {
+	-webkit-transition: all 600ms cubic-bezier(0.260, 0.860, 0.440, 0.985);
+	   -moz-transition: all 600ms cubic-bezier(0.260, 0.860, 0.440, 0.985);
+	    -ms-transition: all 600ms cubic-bezier(0.260, 0.860, 0.440, 0.985);
+	     -o-transition: all 600ms cubic-bezier(0.260, 0.860, 0.440, 0.985);
+	        transition: all 600ms cubic-bezier(0.260, 0.860, 0.440, 0.985);
+}
+	.wave li.past {
+		-webkit-transform: translateX( -70% );
+		   -moz-transform: translateX( -70% );
+		    -ms-transform: translateX( -70% );
+		     -o-transform: translateX( -70% );
+		        transform: translateX( -70% );
+	}
+	.wave li.future {
+		-webkit-transform: translateX( -70% );
+		   -moz-transform: translateX( -70% );
+		    -ms-transform: translateX( -70% );
+		     -o-transform: translateX( -70% );
+		        transform: translateX( -70% );
+	}
+
+
+/**
+ * Fan styles
+ */
+.fan li {
+	-webkit-transition: all 600ms cubic-bezier(0.390, 0.575, 0.565, 1.000);
+	   -moz-transition: all 600ms cubic-bezier(0.390, 0.575, 0.565, 1.000);
+	    -ms-transition: all 600ms cubic-bezier(0.390, 0.575, 0.565, 1.000);
+	     -o-transition: all 600ms cubic-bezier(0.390, 0.575, 0.565, 1.000);
+	        transition: all 600ms cubic-bezier(0.390, 0.575, 0.565, 1.000);
+
+	-webkit-transform-origin: 0% 0%;
+	   -moz-transform-origin: 0% 0%;
+	    -ms-transform-origin: 0% 0%;
+	     -o-transform-origin: 0% 0%;
+	        transform-origin: 0% 0%;
+}
+	.fan li.past {
+		-webkit-transform: rotate( -60deg );
+		   -moz-transform: rotate( -60deg );
+		    -ms-transform: rotate( -60deg );
+		     -o-transform: rotate( -60deg );
+		        transform: rotate( -60deg );
+	}
+	.fan li.future {
+		-webkit-transform: rotate( 70deg );
+		   -moz-transform: rotate( 70deg );
+		    -ms-transform: rotate( 70deg );
+		     -o-transform: rotate( 70deg );
+		        transform: rotate( 70deg );
+	}
+
+
+/**
+ * Tilt styles
+ */
+.tilt {
+	-webkit-perspective: 800px;
+	   -moz-perspective: 800px;
+	    -ms-perspective: 800px;
+	     -o-perspective: 800px;
+	        perspective: 800px;
+
+	-webkit-perspective-origin: 50% 50%;
+	   -moz-perspective-origin: 50% 50%;
+	    -ms-perspective-origin: 50% 50%;
+	     -o-perspective-origin: 50% 50%;
+	        perspective-origin: 50% 50%;
+}
+
+	.tilt li {
+		position: relative;
+
+		-webkit-transition: all 1000ms cubic-bezier(0.260, 0.860, 0.440, 0.985),
+							opacity 300ms ease;
+		   -moz-transition: all 1000ms cubic-bezier(0.260, 0.860, 0.440, 0.985);
+		    -ms-transition: all 1000ms cubic-bezier(0.260, 0.860, 0.440, 0.985),
+		    				opacity 300ms ease;
+		     -o-transition: all 1000ms cubic-bezier(0.260, 0.860, 0.440, 0.985),
+		    				opacity 300ms ease;
+		        transition: all 1000ms cubic-bezier(0.260, 0.860, 0.440, 0.985),
+		        			opacity 300ms ease;
+	}
+		.tilt li.past {
+			opacity: 0;
+
+			-webkit-transform: translateY( 100% ) translateZ(-200px);
+			   -moz-transform: translateY( 100% ) translateZ(-200px);
+			    -ms-transform: translateY( 100% ) translateZ(-200px);
+			     -o-transform: translateY( 100% ) translateZ(-200px);
+			        transform: translateY( 100% ) translateZ(-200px);
+		}
+		.tilt li.future {
+			opacity: 0;
+
+			-webkit-transform: translateY( -100% ) translateZ(-200px);
+			   -moz-transform: translateY( -100% ) translateZ(-200px);
+			    -ms-transform: translateY( -100% ) translateZ(-200px);
+			     -o-transform: translateY( -100% ) translateZ(-200px);
+			        transform: translateY( -100% ) translateZ(-200px);
+		}
+
+
+/**
+ * Curl styles
+ */
+.curl {
+	-webkit-perspective: 600px;
+	   -moz-perspective: 600px;
+	    -ms-perspective: 600px;
+	     -o-perspective: 600px;
+	        perspective: 600px;
+
+	-webkit-perspective-origin: 0% 50%;
+	   -moz-perspective-origin: 0% 50%;
+	    -ms-perspective-origin: 0% 50%;
+	     -o-perspective-origin: 0% 50%;
+	        perspective-origin: 0% 50%;
+}
+
+	.curl li {
+		-webkit-transition: all 600ms ease,
+							opacity 200ms ease;
+		   -moz-transition: all 600ms ease;
+		    -ms-transition: all 600ms ease,
+		    				opacity 200ms ease;
+		     -o-transition: all 600ms ease,
+		    				opacity 200ms ease;
+		        transition: all 600ms ease,
+		        			opacity 200ms ease;
+
+		-webkit-transform-origin: 0% 0%;
+		   -moz-transform-origin: 0% 0%;
+		    -ms-transform-origin: 0% 0%;
+		     -o-transform-origin: 0% 0%;
+		        transform-origin: 0% 0%;
+	}
+		.curl li.past {
+			opacity: 0;
+
+			-webkit-transform: rotateY( 90deg );
+			   -moz-transform: rotateY( 90deg );
+			    -ms-transform: rotateY( 90deg );
+			     -o-transform: rotateY( 90deg );
+			        transform: rotateY( 90deg );
+		}
+		.curl li.future {
+			opacity: 0;
+
+			-webkit-transform: rotateY( 90deg );
+			   -moz-transform: rotateY( 90deg );
+			    -ms-transform: rotateY( 90deg );
+			     -o-transform: rotateY( 90deg );
+			        transform: rotateY( 90deg );
+		}
+
+
+/**
+ * Papercut styles
+ */
+/*.test li {
+	-webkit-transition: all 600ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
+	   -moz-transition: all 600ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
+	    -ms-transition: all 600ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
+	     -o-transition: all 600ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
+	        transition: all 600ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
+}*/
+.papercut {
+	-webkit-perspective: 600px;
+	   -moz-perspective: 600px;
+	    -ms-perspective: 600px;
+	     -o-perspective: 600px;
+	        perspective: 600px;
+
+	-webkit-perspective-origin: 0% 0%;
+	   -moz-perspective-origin: 0% 0%;
+	    -ms-perspective-origin: 0% 0%;
+	     -o-perspective-origin: 0% 0%;
+	        perspective-origin: 0% 0%;
+}
+	.papercut li {
+		-webkit-transition: all 600ms ease;
+		   -moz-transition: all 600ms ease;
+		    -ms-transition: all 600ms ease;
+		     -o-transition: all 600ms ease;
+		        transition: all 600ms ease;
+
+		-webkit-transform-origin: 0% 0%;
+		   -moz-transform-origin: 0% 0%;
+		    -ms-transform-origin: 0% 0%;
+		     -o-transform-origin: 0% 0%;
+		        transform-origin: 0% 0%;
+	}
+		.papercut li.past {
+			-webkit-transform: skew( 0deg, -30deg );
+			   -moz-transform: skew( 0deg, -30deg );
+			    -ms-transform: skew( 0deg, -30deg );
+			     -o-transform: skew( 0deg, -30deg );
+			        transform: skew( 0deg, -30deg );
+		}
+		.papercut li.future {
+			-webkit-transform: skew( 0deg, 30deg );
+			   -moz-transform: skew( 0deg, 30deg );
+			    -ms-transform: skew( 0deg, 30deg );
+			     -o-transform: skew( 0deg, 30deg );
+			        transform: skew( 0deg, 30deg );
+		}
+
+
+/**
+ * Zipper styles
+ */
+.zipper li {
+	-webkit-transition: all 600ms cubic-bezier(0.390, 0.575, 0.565, 1.000);
+	   -moz-transition: all 600ms cubic-bezier(0.390, 0.575, 0.565, 1.000);
+	    -ms-transition: all 600ms cubic-bezier(0.390, 0.575, 0.565, 1.000);
+	     -o-transition: all 600ms cubic-bezier(0.390, 0.575, 0.565, 1.000);
+	        transition: all 600ms cubic-bezier(0.390, 0.575, 0.565, 1.000);
+
+	-webkit-transform-origin: 50% 0%;
+	   -moz-transform-origin: 50% 0%;
+	    -ms-transform-origin: 50% 0%;
+	     -o-transform-origin: 50% 0%;
+	        transform-origin: 50% 0%;
+}
+	.zipper li.past:nth-child(odd),
+	.zipper li.future:nth-child(odd) {
+		-webkit-transform: translateX( 80% );
+		   -moz-transform: translateX( 80% );
+		    -ms-transform: translateX( 80% );
+		     -o-transform: translateX( 80% );
+		        transform: translateX( 80% );
+	}
+	.zipper li.past:nth-child(even),
+	.zipper li.future:nth-child(even) {
+		-webkit-transform: translateX( -80% );
+		   -moz-transform: translateX( -80% );
+		    -ms-transform: translateX( -80% );
+		     -o-transform: translateX( -80% );
+		        transform: translateX( -80% );
+	}
+  </style>
 
 </head>
 <body>
-<!-- partial:index.partial.html -->
+
 <div id="main">
 		<ul class="zipper"><li>One</li><li>Two</li><li>Three</li><li>Four</li><li>Five</li><li>Six</li><li>Seven</li><li>Eight</li><li>Nine</li><li>Ten</li><li>Eleven</li><li>Twelve</li><li>Thirteen</li><li>Fourteen</li><li>Fifteen</li><li>Sixteen</li><li>Seventeen</li><li>Eighteen</li><li>Nineteen</li><li>Twenty</li><li>Twentyone</li><li>Twentytwo</li><li>Twentythree</li><li>Twentyfour</li><li>Twentyfive</li><li>Twentysix</li><li>Twentyseven</li><li>Twentyeight</li><li>Twentynine</li><li>Thirty</li><li>Thirtyone</li><li>Thirtytwo</li><li>Thirtythree</li><li>Thirtyfour</li><li>Thirtyfive</li><li>Thirtysix</li><li>Thirtyseven</li><li>Thirtyeight</li><li>Thirtynine</li><li>Fourty</li><li>Fourtyone</li><li>Fourtytwo</li><li>Fourtythree</li><li>Fourtyfour</li><li>Fourtyfive</li><li>Fourtysix</li><li>Fourtyseven</li><li>Fourtyeight</li><li>Fourtynine</li><li>Fifty</li><li>Fiftyone</li><li>Fiftytwo</li><li>Fiftythree</li><li>Fiftyfour</li><li>Fiftyfive</li><li>Fiftysix</li><li>Fiftyseven</li><li>Fiftyeight</li><li>Fiftynine</li><li>Sixty</li><li>Sixtyone</li><li>Sixtytwo</li><li>Sixtythree</li><li>Sixtyfour</li><li>Sixtyfive</li><li>Sixtysix</li><li>Sixtyseven</li><li>Sixtyeight</li><li>Sixtynine</li><li>Seventy</li><li>Seventyone</li><li>Seventytwo</li><li>Seventythree</li><li>Seventyfour</li><li>Seventyfive</li><li>Seventysix</li><li>Seventyseven</li><li>Seventyeight</li><li>Seventynine</li><li>Eighty</li><li>Eightyone</li><li>Eightytwo</li><li>Eightythree</li><li>Eightyfour</li><li>Eightyfive</li><li>Eightysix</li><li>Eightyseven</li><li>Eightyeight</li><li>Eightynine</li><li>Ninety</li><li>Ninetyone</li><li>Ninetytwo</li><li>Ninetythree</li><li>Ninetyfour</li><li>Ninetyfive</li><li>Ninetysix</li><li>Ninetyseven</li><li>Ninetyeight</li><li>Ninetynine</li></ul>
 
 </div>
-<!-- partial -->
-  <script  src="./script.js"></script>
+
+  <script  src="./script.js">
+/**
+ * @author Hakim El Hattab | http://hakim.se
+ */
+
+ window.requestAnimFrame = (function(){
+  return  window.requestAnimationFrame       ||
+		  window.webkitRequestAnimationFrame ||
+		  window.mozRequestAnimationFrame    ||
+		  window.oRequestAnimationFrame      ||
+		  window.msRequestAnimationFrame     ||
+		  function( callback ){
+			window.setTimeout(callback, 1000 / 60);
+		  };
+})();
+
+
+var Stroll = {
+	bind: function(element) {
+
+		var items = Array.prototype.slice.apply( element.children );
+
+		// caching some heights so we don't need to go back to the DOM so much
+		var listHeight = element.offsetHeight;
+
+		// one loop to get the offsets from the DOM
+		for( var i = 0, len = items.length; i < len; i++ ) {
+			items[i]._offsetTop = items[i].offsetTop
+			items[i]._offsetHeight = items[i].offsetHeight
+		}
+
+		return (function() {
+
+			(function animloop(){
+				requestAnimFrame( animloop );
+				update();
+			})();
+
+			// Apply past/future classes to list items outside of the viewport
+			function update() {
+				var scrollTop = element.pageYOffset || element.scrollTop,
+					scrollBottom = scrollTop + listHeight;
+
+				// Quit if nothing changed.
+				if( scrollTop == element.lastTop ) return;
+
+				element.lastTop = scrollTop;
+
+				// One loop to make our changes to the DOM
+				for( var i = 0, len = items.length; i < len; i++ ) {
+					var item = items[i];
+
+					// Above list viewport
+					if( item._offsetTop + item._offsetHeight < scrollTop ) {
+						item.classList.add( 'past' );
+					}
+					// Below list viewport
+					else if( item._offsetTop > scrollBottom ) {
+						item.classList.add( 'future' );
+					}
+					// Inside of list viewport
+					else {
+						item.classList.remove( 'past' );
+						item.classList.remove( 'future' );
+					}
+				}
+			}
+
+		})();
+	}
+};
+
+
+
+var lists = document.querySelectorAll( '#main ul' );
+
+for( var i = 0; i < lists.length; i++ ) {
+	Stroll.bind( lists[i] );
+}    
+  </script>
 
 </body>
 </html>

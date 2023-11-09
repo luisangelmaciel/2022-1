@@ -186,3 +186,118 @@ a {
   width: 600px;
   z-index: -1;
 }
+
+
+@media (max-width:1205px) {
+  .w3-auto {
+      max-width: 95%
+  }
+}
+
+@media (max-width:600px) {
+  .canvas-container {
+    position: absolute;
+    top: 0;
+    width: 350px;
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: -1;
+  }
+  
+  .card {
+  background: #2d2d2d;
+  /*position: relative;*/
+  height: 350px;
+  width: 300px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}.w3-modal-content {
+      margin: 0 10px;
+      width: auto!important
+  }
+  .w3-modal {
+      padding-top: 30px
+  }
+  .w3-dropdown-hover.w3-mobile .w3-dropdown-content,
+  .w3-dropdown-click.w3-mobile .w3-dropdown-content {
+      position: relative
+  }
+  .w3-hide-small {
+      display: none!important
+  }
+  .w3-mobile {
+      display: block;
+      width: 100%!important
+  }
+  .w3-bar-item.w3-mobile,
+  .w3-dropdown-hover.w3-mobile,
+  .w3-dropdown-click.w3-mobile {
+      text-align: center
+  }
+  .w3-dropdown-hover.w3-mobile,
+  .w3-dropdown-hover.w3-mobile .w3-btn,
+  .w3-dropdown-hover.w3-mobile .w3-button,
+  .w3-dropdown-click.w3-mobile,
+  .w3-dropdown-click.w3-mobile .w3-btn,
+  .w3-dropdown-click.w3-mobile .w3-button {
+      width: 100%
+  }
+}
+
+@media (max-width:768px) {
+  .w3-modal-content {
+      width: 500px
+  }
+  .w3-modal {
+      padding-top: 50px
+  }
+}
+
+@media (min-width:993px) {
+  .w3-modal-content {
+      width: 900px
+  }
+  .w3-hide-large {
+      display: none!important
+  }
+  .w3-sidebar.w3-collapse {
+      display: block!important
+  }
+}
+
+.w3-hide {
+  display: none!important
+}
+
+
+@media (max-width:992px) and (min-width:601px) {
+  .w3-hide-medium {
+      display: none!important
+  }
+}
+
+@media (max-width:992px) {
+  .w3-sidebar.w3-collapse {
+      display: none
+  }
+  .w3-main {
+      margin-left: 0!important;
+      margin-right: 0!important
+  }
+  .w3-auto {
+      max-width: 100%
+  }
+}
+
+
+
+

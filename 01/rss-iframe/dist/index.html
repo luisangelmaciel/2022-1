@@ -2,18 +2,29 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - rss iframe</title>
-  <link rel="stylesheet" href="./style.css">
+  <title>RSS iframe</title>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale = 1.0, user-scalable = no">
+  <style>
+    .feedEkList{width:450px; list-style:none outside none;background-color:#FFFFFF; border:1px solid #D3CAD7; padding:4px 6px; color:#3E3E3E;}
+    .feedEkList li{border-bottom:1px solid #D3CAD7; padding:5px;}
+    .feedEkList li:last-child{border-bottom:none;color:red}
+    .itemTitle a{font-weight:bold; color:#4EBAFF !important; text-decoration:none }
+    .itemTitle a:hover{ text-decoration:underline }
+    .itemDate{font-size:11px;color:#AAAAAA;}
+  </style>
 
 </head>
 <body>
-<!-- partial:index.partial.html -->
+
 <div id="divRss"></div>
 
 <iframe id='xx' name='xx' ></iframe>
 <!-- partial -->
   <script src='https://code.jquery.com/jquery-1.9.1.min.js'></script>
-<script src='https://jquery-plugins.net/FeedEk/FeedEk.min.js'></script><script  src="./script.js"></script>
+<script src='https://jquery-plugins.net/FeedEk/FeedEk.min.js'></script>
+<script src='./jquery-1.9.1.min.js'></script>
+<script src='./FeedEk.min.js'></script>
+<script  src="./script.js"></script>
 
 </body>
 </html>

@@ -2,7 +2,8 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - User Listing</title>
+  <title>User Listing</title>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale = 1.0, user-scalable = no">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel="stylesheet" href="./style.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
@@ -16,11 +17,11 @@
 </div>
 <div class="user-container">
   <i class="fa fa-users"></i>
-  <h3>Connected</h3>
+  <h3 style="font-weight: 800;"><strong>SERVICIOS</strong></h3>
 <ul class="users">
   <li class="is-active">
     <div class="users__user--status"><i class="fa fa-circle"></i></div>
-    <div class="users__user--name">Sherriff B.</div>
+    <div class="users__user--name"><span style="font-weight: 700; font-size: xx-large;">D</span>iseño gráfico</div>
     <div class="users__user--interactions">
       <i class="fa fa-envelope"></i>
       <i class="fa fa-comment"></i>
@@ -28,7 +29,7 @@
   </li>
   <li class="is-active">
     <div class="users__user--status"><i class="fa fa-circle"></i></div>
-    <div class="users__user--name">Waco K.</div>
+    <div class="users__user--name"><span style="font-weight: 700; font-size: xx-large;">D</span>esarrollo de aplicaciones</div>
     <div class="users__user--interactions">
       <i class="fa fa-envelope"></i>
       <i class="fa fa-comment"></i>
@@ -36,7 +37,7 @@
   </li>
   <li class="is-current-user is-idle">
     <div class="users__user--status"><i class="fa fa-circle"></i></div>
-    <div class="users__user--name">Hedley L.</div>
+    <div class="users__user--name"><span style="font-weight: 700; font-size: xx-large;">D</span>iseño de páginas web</div>
     <div class="users__user--interactions">
       <i class="fa fa-envelope"></i>
       <i class="fa fa-comment"></i>
@@ -44,7 +45,7 @@
   </li>
   <li class="is-active">
     <div class="users__user--status"><i class="fa fa-circle"></i></div>
-    <div class="users__user--name">Lili V.S.</div>
+    <div class="users__user--name"><span style="font-weight: 700; font-size: xx-large;">I</span>mpresión de articulos publicitarios</div>
     <div class="users__user--interactions">
       <i class="fa fa-envelope"></i>
       <i class="fa fa-comment"></i>
@@ -52,7 +53,23 @@
   </li>
   <li class="is-offline">
     <div class="users__user--status"><i class="fa fa-circle"></i></div>
-    <div class="users__user--name">William J.L.P.</div>
+    <div class="users__user--name"><span style="font-weight: 700; font-size: xx-large;">J</span>uegos personalizados</div>
+    <div class="users__user--interactions">
+      <i class="fa fa-envelope"></i>
+      <i class="fa fa-comment"></i>
+    </div>
+  </li>
+  <li class="is-offline">
+    <div class="users__user--status"></div>
+    <div class="users__user--name"></div>
+    <div class="users__user--interactions"><!-- limpio -->
+      <i class="fa fa-envelope"></i>
+      <i class="fa fa-comment"></i>
+    </div>
+  </li>
+  <li class="is-offline">
+    <div class="users__user--status"><i class="fa fa-circle"></i></div>
+    <div class="users__user--name">Cotización</div>
     <div class="users__user--interactions">
       <i class="fa fa-envelope"></i>
       <i class="fa fa-comment"></i>
@@ -62,5 +79,6 @@
 </div>
 <!-- partial -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+  <script src='./jquery-3-5-0.js'></script>
 </body>
 </html>

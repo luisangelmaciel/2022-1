@@ -25,8 +25,8 @@
       --transition: all 0.3s linear;
       --spacing: 0.25rem;
       --radius: 0.5rem;
-      --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.815);
+      --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.918);
       --max-width: 1170px;
       --fixed-width: 620px;
     }
@@ -45,9 +45,9 @@
     }
     body {
       font-family: var(--ff-secondary);
-      background-color: #323232;
+      background-color: #051931;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='112' height='92' viewBox='0 0 112 92'%3E%3Cg fill='%23000000' fill-opacity='0.06'%3E%3Cpath fill-rule='evenodd' d='M72 10H40L16 20H0v8h16l24-14h32l24 14h16v-8H96L72 10zm0-8H40L16 4H0v8h16l24-6h32l24 6h16V4H96L72 2zm0 84H40l-24-6H0v8h16l24 2h32l24-2h16v-8H96l-24 6zm0-8H40L16 64H0v8h16l24 10h32l24-10h16v-8H96L72 78zm0-12H40L16 56H0v4h16l24 14h32l24-14h16v-4H96L72 66zm0-16H40l-24-2H0v4h16l24 6h32l24-6h16v-4H96l-24 2zm0-16H40l-24 6H0v4h16l24-2h32l24 2h16v-4H96l-24-6zm0-16H40L16 32H0v4h16l24-10h32l24 10h16v-4H96L72 18z'/%3E%3C/g%3E%3C/svg%3E");
-      color: #FF6F59;
+      color: #ffffff;
       line-height: 1.5;
       font-size: 0.875rem;
     }
@@ -82,7 +82,7 @@
     }
     h3 {
       font-size: 1.25rem;
-      color: #FF6F59;
+      /*color: #FF6F59;*/
     }
     h4 {
       font-size: 0.875rem;
@@ -118,8 +118,8 @@
 
     .btn {
       text-transform: uppercase;
-      background: #FF6F59;
-      color: #191919;
+      background:rgb(103, 58, 183);
+      color: #fffefe;
       padding: 0.375rem 0.75rem;
       letter-spacing: 1px;
       display: inline-block;
@@ -127,7 +127,7 @@
       font-size: 0.875rem;
       border: 2px solid var(--clr-primary-5);
       cursor: pointer;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.815);
       border-radius: var(--radius);
     }
     .btn:hover {
@@ -137,16 +137,15 @@
     }
     /* section */
     .section {
-      padding: 5rem 0;
+      padding: 4rem 0;
     }
 
     .section-center {
       width: 90vw;
       margin: 0 auto;
       max-width: 40rem;
-      margin-top: 5rem;
+      margin-top: 1rem;
       text-align: center;
-      color: #FF6F59;
     }
     @media screen and (min-width: 992px) {
       .section-center {
@@ -165,7 +164,6 @@
     */
     h3 {
       text-transform: uppercase;
-      color: #FF6F59;
     }
     .lorem-form {
       text-transform: capitalize;
@@ -175,15 +173,15 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      color: #FF6F59;
     }
     label {
       font-size: 1.25rem;
-      color: #FF6F59;
     }
     input {
       padding: 0.25rem 0.5rem;
-
+background-color: transparent;
+overflow: hidden;
+color:white;
       width: 4rem;
       border-radius: var(--radius);
       border: none;
@@ -199,10 +197,157 @@
   </style>
 </head>
 <body>
+  <!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Magic text. Animation CSS</title>  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale = 1.0, user-scalable = no">
+  
+<style>:root {
+  --purple: rgb(123, 31, 162);
+  --violet: rgb(103, 58, 183);
+  --pink: rgb(244, 143, 177);
+}
+
+@keyframes background-pan {
+  from {
+      background-position: 0% center;
+  }
+  to {
+      background-position: -200% center;
+  }
+}
+
+@keyframes scale {
+  from,
+  to {
+      transform: scale(0);
+  }
+  50% {
+      transform: scale(1);
+  }
+}
+
+@keyframes rotate {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(180deg);
+  }
+}
+
+.magic-black {
+  background-color: rgb(0, 0, 0);
+ 
+}
+
+.magic-white {
+  text-align: center;
+  display: grid;
+  margin: 0px;
+  overflow: hidden;
+  place-items: center;
+  height: 250px;
+  color: white;
+  font-size: clamp(2.5em, 2.5vw, 4.5em);
+  font-weight: 800;
+  margin: 0px;
+  padding: 20px; z-index: 99;
+
+}
+
+.magic {
+  display: inline-block;
+  position: relative;text-align: center;
+}
+
+.magic>.magic-star {
+  --size: clamp(20px, 1.5vw, 30px);
+  animation: scale 700ms ease forwards;
+  display: block;
+  height: var(--size);
+  left: var(--star-left);
+  position: absolute;
+  top: var(--star-top);
+  width: var(--size);
+}
+
+.magic>.magic-star>svg {
+  animation: rotate 1000ms linear infinite;
+  display: block;
+  opacity: 0.7;
+}
+
+.magic>.magic-star>svg>path {
+  fill: var(--violet);
+}
+
+.magic>.magic-text {
+  animation: background-pan 3s linear infinite;
+  background: linear-gradient( to right, var(--purple), var(--violet), var(--pink), var(--purple));
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+}</style>
+</head>
+<body>
+
+
+
+<div class="magic-white">
+    <span class="magic">
+  <span class="magic-star">
+    <svg viewBox="0 0 512 512">
+    <path d="M512 255.1c0 11.34-7.406 20.86-18.44 23.64l-171.3 42.78l-42.78 171.1C276.7 504.6 267.2 512 255.9 512s-20.84-7.406-23.62-18.44l-42.66-171.2L18.47 279.6C7.406 276.8 0 267.3 0 255.1c0-11.34 7.406-20.83 18.44-23.61l171.2-42.78l42.78-171.1C235.2 7.406 244.7 0 256 0s20.84 7.406 23.62 18.44l42.78 171.2l171.2 42.78C504.6 235.2 512 244.6 512 255.1z" />
+    </svg>
+  </span>
+    <span class="magic-star">
+    <svg viewBox="0 0 512 512">
+    <path d="M512 255.1c0 11.34-7.406 20.86-18.44 23.64l-171.3 42.78l-42.78 171.1C276.7 504.6 267.2 512 255.9 512s-20.84-7.406-23.62-18.44l-42.66-171.2L18.47 279.6C7.406 276.8 0 267.3 0 255.1c0-11.34 7.406-20.83 18.44-23.61l171.2-42.78l42.78-171.1C235.2 7.406 244.7 0 256 0s20.84 7.406 23.62 18.44l42.78 171.2l171.2 42.78C504.6 235.2 512 244.6 512 255.1z" />
+    </svg>
+  </span>
+    <span class="magic-star">
+    <svg viewBox="0 0 512 512">
+    <path d="M512 255.1c0 11.34-7.406 20.86-18.44 23.64l-171.3 42.78l-42.78 171.1C276.7 504.6 267.2 512 255.9 512s-20.84-7.406-23.62-18.44l-42.66-171.2L18.47 279.6C7.406 276.8 0 267.3 0 255.1c0-11.34 7.406-20.83 18.44-23.61l171.2-42.78l42.78-171.1C235.2 7.406 244.7 0 256 0s20.84 7.406 23.62 18.44l42.78 171.2l171.2 42.78C504.6 235.2 512 244.6 512 255.1z" />
+    </svg>
+  </span>
+    <p class="magic-text" style="text-align: center;line-height: 45px;"><span style="font-size: xx-large;">MAGIC</span><br><span style="font-size: xxx-large;">Lorem Ipsum</span><br> <span style="font-size: xx-large;">GENERATOR</span></p>
+    </span>
+</div>
+
+<script>
+  let index = 0,
+      interval = 1000;
+
+  const rand = (min, max) =>
+      Math.floor(Math.random() * (max - min + 1)) + min;
+
+  const animate = star => {
+      star.style.setProperty("--star-left", `${rand(-10, 100)}%`);
+      star.style.setProperty("--star-top", `${rand(-40, 80)}%`);
+
+      star.style.animation = "none";
+      star.offsetHeight;
+      star.style.animation = "";
+  }
+
+  for (const star of document.getElementsByClassName("magic-star")) {
+      setTimeout(() => {
+          animate(star);
+
+          setInterval(() => animate(star), 900);
+      }, index++ * (interval / 3))
+  }  
+</script>
+
+
+
 <section class="section-center">
-  <h3>lorem ipsum generator:</h3>
+
   <form class="lorem-form">
-    <label for="amount">paragraphs:</label>
+    <label for="amount">Paragraphs</label>
     <input type="number" name="amount" id="amount" placeholder="1" />
     <button type="submit" class="btn">generate</button>
   </form>

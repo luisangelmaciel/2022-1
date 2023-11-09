@@ -2,12 +2,14 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - Native video/photo capture</title>
-  <link rel="stylesheet" href="./style.css">
+  <title>Native video/photo capture</title>  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale = 1.0, user-scalable = no">
+  <style>.hidden {
+    display: none;
+  }</style>
 
 </head>
 <body>
-<!-- partial:index.partial.html -->
+
 <p>Open this page on iOS or Android device</p>
 <button class="takeapic">Take a pic</button>
 <button class="takeaselfie">Snap a selfie</button>
@@ -20,8 +22,23 @@
   <input id="selfie-input" type="file" accept="image/*" capture="user">
   <input id="audio-input" type="file" accept="audio/*" capture>
 </div>
-<!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script><script  src="./script.js"></script>
+
+  <script src='./jquery-3-5-0.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+  <script>
+    $('.takeapic').click(function() {
+  $('#photo-input').click()
+})
+$('.takeaclip').click(function() {
+  $('#video-input').click()
+})
+$('.takeaselfie').click(function() {
+  $('#selfie-input').click()
+})
+$('.audio').click(function() {
+  $('#audio-input').click()
+})
+  </script>
 
 </body>
 </html>
